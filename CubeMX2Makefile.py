@@ -143,7 +143,7 @@ nodes = root.findall('.//tool[@superClass="fr.ac6.managedbuild.tool.gnu.cross.c.
 for node in nodes:
     value = node.attrib.get('value')
     if (value != ""):
-        c_defs += ' -D' + re.sub(r'([()])', r'\\\1', value)
+        c_defs += ' -D' + value # re.sub(r'([()])', r'\\\1', value)
 
 # Link script
 ldscript = 'LDSCRIPT = ' 
